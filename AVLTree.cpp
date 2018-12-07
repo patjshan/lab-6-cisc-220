@@ -10,20 +10,11 @@
 
 AVLTree::AVLTree() {
 	root = NULL;
+	size = 0;
 }
 
-// You write:  insert a new node with data x (a string) into the
-// binary search tree
-// This method should return true if a new node is inserted and
-// false if the data x is already in the tree
-// Remember to check whether the new node will be the root
-// (meaning the root is currently NULL) and if so, set the root
-// to be the new node.
-// Note: Make sure you make the new node point to its parent!!!
-// Note2: after you've inserted a new node, you should call the
-// adjustHeights method that will update the heights of all the
-// ancestors of the node that was just inserted.
-bool AVLTree::insertit(string x ) {
+
+bool AVLTree::insertit(string x) {
 	bool insert = false; // initialize boolean to be returned later
 	NodeT *tmp = new NodeT(x); // make a node with data value x
 	if (root == NULL){
@@ -322,6 +313,7 @@ void AVLTree::adjustHeights(NodeT *n) {
 
 	if(root == n){
 		cout << "is root" << endl;
+		size = root->height;
 		n->parent = NULL;
 
 	}
@@ -428,29 +420,7 @@ void AVLTree::printTreePost(NodeT *n) {
 	else{}
 	n->printNode();
 }
-void AVLTree::myPrint() {
-	if (root == NULL ) {
-		cout << "Empty Tree" << endl;
-	}
-	else {
-		myPrint(root);
-		cout << endl;
-	}
-}
-void AVLTree::myPrint(NodeT *n) {
-	if (n == NULL) {
-		return;
-	}
-	else {
-		myPrint(n->left);
-		cout << n->w->word.length()-1;
-		if (mine) {
-			cout <<".";
-			mine = false;
-		}
-		myPrint(n->right);
-	}
-}
+
 
 // the find method takes as input a string, and finds whether that string is already
 // in the tree or not.  If it is in the tree, that node is returned from the tree.
@@ -606,6 +576,7 @@ bool AVLTree::remove(string s) {
 		removed = true;
 
 	}
+	return removed;
 
 }
 
@@ -691,7 +662,7 @@ void AVLTree::remove3(NodeT *n) {
 	//cout << "enter rem3" << endl;
 	NodeT *tmp = findMin(n);
 	//cout << "found min" << endl;
-	NodeT *tmp2 = new NodeT(tmp->w);
+	NodeT *tmp2 = new NodeT(tmp->w->word);
 
 	if (tmp->right != NULL){
 		//cout << "enter check remove min" << endl;
@@ -751,25 +722,7 @@ NodeT *AVLTree::findMin(NodeT *n) {
 
 }
 
-void AVLTree::myPrintEC() {
-	if (root == NULL ) {
-		cout << "Empty Tree" << endl;
-	}
-	else {
-		myPrintEC(root);
-		cout << endl;
-	}
-}
-void AVLTree::myPrintEC(NodeT *n) {
-	if (n == NULL) {
-		return;
-	}
-	else {
-		myPrintEC(n->left);
-		cout << alpha[n->w->word.length()-2];
-		myPrintEC(n->right);
-	}
-}
+
 
 
 /************************************************************************/

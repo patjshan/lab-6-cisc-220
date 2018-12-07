@@ -9,7 +9,7 @@
 #define AC_HPP_
 
 #include "AVLTree.hpp" // You update
-#include "wordInfo.hpp"
+#include "wordinfo.hpp"
 #include "Sorting.hpp" // You write
 #include <iostream>
 using namespace std;
@@ -17,8 +17,8 @@ class AC {
 	bool verbose;
 	AVLTree *tree;
 	string fn;
-	wordInfo **wordarr;
-	wordInfo **predictions;
+	wordInfo ** wordarr;
+	wordInfo ** predictions;
 	int currSize;
 	string curr;
 	Sorting sorts;

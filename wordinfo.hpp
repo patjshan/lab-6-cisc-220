@@ -14,13 +14,13 @@
 using namespace std;
 
 class wordInfo {
+	string word;
 	friend class NodeT;
 	friend class AVLTree;
 	friend class Sorting;
 	friend class AC;
-	string word;
-	int ct;
 public:
+	int ct;
 	wordInfo(string w, int x);
 	wordInfo(string w);
 	wordInfo();

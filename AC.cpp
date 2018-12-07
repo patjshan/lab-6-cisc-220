@@ -138,8 +138,7 @@ int AC::findEnd() {
 	while (b<=e) {
 		if (verbose) {
 			cout << "B is " << b << ", E is " << e <<", "<<" m is "<<m << endl;
-			cout << curr << ","<<wordarr[m]->word << ", "<<curr.compare(wordarr[m]-
-					>word.substr(0,curr.length()))<<endl;
+			cout << curr << ","<<wordarr[m]->word << ", "<<curr.compare(wordarr[m]->word.substr(0,curr.length()))<<endl;
 		}
 		if (curr.compare(wordarr[m]->word.substr(0,curr.length()))==0) {
 			e = m;
@@ -166,8 +165,7 @@ int AC::findBeg() {
 	while (b<=e ) {
 		if (verbose) {
 			cout << "b is " << b << ", e is " << e <<", "<<" m is "<<m << endl;
-			cout << curr << ","<<wordarr[m]->word << ", "<<curr.compare(wordarr[m]-
-					>word.substr(0,curr.length()))<<endl;
+			cout << curr << ","<<wordarr[m]->word << ", "<<curr.compare(wordarr[m]->word.substr(0,curr.length()))<<endl;
 		}
 		if (curr.compare(wordarr[m]->word.substr(0,curr.length()))==0) {
 			b = m;

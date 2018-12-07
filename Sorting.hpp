@@ -7,17 +7,17 @@
 
 #ifndef SORTING_HPP_
 #define SORTING_HPP_
-#include "wordInfo.hpp"
+#include "wordinfo.hpp"
 
 class Sorting{
 
 public:
-	void insertionSort(wordInfo *w, int len);
-	void selectionSort(wordInfo *w, int len);
-	void mergeSort(wordInfo *w, int l1, int l2);
-	void quickSort(wordInfo *w, int beg, int end);
-	int partition(wordInfo *w, int beg, int end);
-	void merge(wordInfo *w, int i, int m , int r);
+	void insertionSort(wordInfo **w, int len);
+	void selectionSort(wordInfo **w, int len);
+	void mergeSort(wordInfo **w, int l1, int l2);
+	void quickSort(wordInfo **w, int beg, int end);
+	int partition(wordInfo **w, int beg, int end);
+	void merge(wordInfo **w, wordInfo **w1, wordInfo ** w2, int len1, int len2);
 };
 
 

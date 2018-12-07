@@ -8,7 +8,7 @@
 #ifndef NODET_HPP_
 #define NODET_HPP_
 
-#include "wordInfo.hpp"
+#include "wordinfo.hpp"
 #include <string>
 using namespace std;
 class NodeT {
